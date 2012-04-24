@@ -22,15 +22,14 @@ set backspace=indent,eol,start
 
 set autochdir
 set backup
-set backupdir=~/.vim/backup
+"set backupdir=~/.vim/backup
 set noerrorbells
 set novisualbell
 set wildmenu
 set wildmode=list:longest
 set showmatch
-
 "completetion
-set completeopt
+set completeopt=menu,preview
 set ofu=syntaxcomplete#Complete
 "search
 set incsearch
