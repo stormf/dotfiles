@@ -28,7 +28,6 @@ set novisualbell
 set wildmenu
 set wildmode=list:longest
 set showmatch
-
 "completetion
 set completeopt=menu,preview
 set ofu=syntaxcomplete#Complete
