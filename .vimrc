@@ -22,7 +22,7 @@ set backspace=indent,eol,start
 
 set autochdir
 set backup
-"set backupdir=~/.vim/backup
+set backupdir=~/.vim/backup
 set noerrorbells
 set novisualbell
 set wildmenu
