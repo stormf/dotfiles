@@ -7,7 +7,7 @@ setopt sharehistory
 setopt auto_cd
 setopt extended_glob
 setopt noclobber
-bindkey -v
+bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/henk/.zshrc'
