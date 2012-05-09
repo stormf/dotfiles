@@ -7,7 +7,7 @@ filetype indent on
 set autoread
 
 "tabs and syntax
-"set expandtab "replace tabs with spaces
+set expandtab "replace tabs with spaces
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -53,4 +53,4 @@ map <silent> <F2> :set list! <CR>
 "match OverLength /\%81v.*/
 
 "when vimrc edited reload it
-autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
+autocmd! bufwritepost vimrc source ~/.vimrc
