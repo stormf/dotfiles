@@ -52,7 +52,7 @@ endif
 
 set list listchars=tab:»\ ,trail:·,eol:$
 map <silent> <F2> :set list! <CR>
-map <silent> <F3> :!wc -w % <CR>
+map <silent> <F3> :!untex % | wc -w <CR>
 "hilight long lines
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.*/
