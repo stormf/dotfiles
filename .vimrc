@@ -3,6 +3,8 @@
 set nocp
 filetype plugin on "Enable file specific plugins
 filetype indent on
+"vim latex-suite load properly
+let g:tex_flavor='latex'
 
 set autoread
 "set 256 color mode
