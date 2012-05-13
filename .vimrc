@@ -5,7 +5,8 @@ filetype plugin on "Enable file specific plugins
 filetype indent on
 
 set autoread
-
+"set 256 color mode
+set t_Co=256
 "share system clipboard
 set clipboard=unnamed
 "tabs and syntax
