@@ -6,6 +6,8 @@ filetype indent on
 
 set autoread
 
+"share system clipboard
+set clipboard=unnamed
 "tabs and syntax
 set expandtab "replace tabs with spaces
 set tabstop=4
