@@ -10,7 +10,7 @@ setopt noclobber
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/henk/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 autoload -Uz compinit
 compinit
@@ -19,12 +19,13 @@ compinit
 autoload -U promptinit
 promptinit
 autoload -U colors && colors
+eval `dircolors -b`
 #prompt pws
 
 zmodload -i zsh/complist
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-alias ls='ls -G'
+alias ls='ls --color'
 
 # Stuff for git
 parse_git_branch () {
@@ -38,13 +39,11 @@ YELLOW=$'\033[38;5;228m'
 ORANGE=$'\033[38;5;173m'
 
 function precmd() {
+#        export PROMPT="%{$RED%}%n@%m%{$BLACK%}:%{$GREEN%}%~%{$YELLOW%}$(parse_git_branch)%{$BLACK%}
         export PROMPT="%{$RED%}%n%{$BLACK%}@%{$RED%}%m%{$BLACK%}:%{$GREEN%}%~%{$YELLOW%}$(parse_git_branch)%{$BLACK%}
 %# "
 }
 
 #exports
 export EDITOR=vim
-export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
-export PATH="$PATH:/opt/local/bin"
-
-alias microemu='java -jar ~/microemulator-2.0.4/microemulator.jar ~/microemulator-2.0.4/apps/Friendura_Generic_microemu_v0.9_en.jar | egrep "(sock|parser)"'
+alias ls=ls -alhG
