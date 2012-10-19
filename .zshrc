@@ -19,7 +19,7 @@ compinit
 autoload -U promptinit
 promptinit
 autoload -U colors && colors
-eval `dircolors -b`
+#"eval `dircolors -b`
 #prompt pws
 
 zmodload -i zsh/complist
