@@ -25,7 +25,7 @@ autoload -U colors && colors
 zmodload -i zsh/complist
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-alias ls='ls --color'
+alias ls='ls -G'
 
 # Stuff for git
 parse_git_branch () {
@@ -46,4 +46,3 @@ function precmd() {
 
 #exports
 export EDITOR=vim
-alias ls=ls -alhG
