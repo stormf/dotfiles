@@ -18,14 +18,16 @@ set expandtab "replace tabs with spaces
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-syntax on
 set number
 set ruler
 set autoindent
 set smartindent
 set mouse=a
 set backspace=indent,eol,start
+
+syntax on
 set background=dark
+colorscheme solarized
 
 set autochdir
 set backup
