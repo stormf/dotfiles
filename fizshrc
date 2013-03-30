@@ -1,0 +1,63 @@
+HISTFILE=~/.histfile
+HISTSIZE=5000
+SAVEHIST=5000
+setopt appendhistory
+setopt sharehistory
+setopt extended_glob
+setopt noclobber
+bindkey -v
+
+#THEME
+export ZSH_THEME=candy
+
+LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
+export LS_COLORS
+
+zstyle :compinstall filename '/home/henk/.zshrc'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+autoload -Uz compinit
+compinit
+
+autoload -U colors && colors
+eval `dircolors -b`
+
+zmodload -i zsh/complist
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:functions' ingored-patterns '_*'
+zstyle ':completion:*' squeeze-slashes true
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+zstyle ':completion:*:pacman:*' force-list always
+zstyle ':completion:*:*:pacman:*' menu yes select
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*' force-list always
+zstyle ':completion:*:*:killall:*' menu yes select
+zstyle ':completion:*:killall:*' force-list always
+
+alias ls='ls --color'
+alias ls='ls -al --color'
+
+alias fingerprint='ssh-keygen -l -f ~/.ssh/id_rsa'
+
+#autoload -U promptinit
+#promptinit
+# Stuff for git
+#parse_git_branch () {
+#        git branch 2> /dev/null | grep "*" | sed -e 's/* \(.*\)/ (\1)/g'
+#}
+#BLACK=$'\033[0m'
+#RED=$'\033[38;5;167m'
+#GREEN=$'\033[38;5;71m'
+#BLUE=$'\033[38;5;111m'
+#YELLOW=$'\033[38;5;228m'
+#ORANGE=$'\033[38;5;173m'
+#
+#function precmd() {
+#        export PROMPT="%{$RED%}%n@%m%{$BLACK%}:%{$GREEN%}%~%{$YELLOW%}$(parse_git_branch)%{$BLACK%}
+#%# "
+#}
+
+#exports
+export EDITOR=vim
+export LESSCHARSET=utf-8
+export LOCALE="en_ZA.UTF-8"

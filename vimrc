@@ -6,6 +6,8 @@ filetype indent on
 "vim latex-suite load properly
 let g:tex_flavor='latex'
 
+call pathogen#infect()
+
 set autoread
 "set 256 color mode
 set t_Co=256
@@ -23,7 +25,7 @@ set autoindent
 set smartindent
 set mouse=a
 set backspace=indent,eol,start
-"set background=dark
+set background=dark
 
 set autochdir
 set backup
