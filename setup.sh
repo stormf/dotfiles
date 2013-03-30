@@ -29,3 +29,5 @@ if [ ! -e ~/.gitconfig ]; then
 	ln -s "$DOTFILES/gitconfig" ~/.gitconfig
 	echo ".gitconfig installed successfully"
 fi
+
+sh ($DOTFILES)/solarize.sh dark
