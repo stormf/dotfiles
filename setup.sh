@@ -16,11 +16,16 @@ if [ ! -d ~/.vim/backup ]; then
 fi
 
 if [ ! -e ~/.vimrc ]; then
-	ln -s "$DOTFILES/.vimrc" ~/.vimrc
+	ln -s "$DOTFILES/vimrc" ~/.vimrc
 	echo ".vimrc installed successfully"
 fi
 
 if [ ! -e ~/.zshrc ]; then
-	ln -s "$DOTFILES/.zshrc" ~/.zshrc
+	ln -s "$DOTFILES/zshrc" ~/.zshrc
 	echo ".zshrc installed successfully"
+fi
+
+if [ ! -e ~/.gitconfig ]; then
+	ln -s "$DOTFILES/gitconfig" ~/.gitconfig
+	echo ".gitconfig installed successfully"
 fi
