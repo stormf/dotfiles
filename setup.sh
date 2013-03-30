@@ -31,3 +31,18 @@ if [ ! -e ~/.gitconfig ]; then
 fi
 
 sh ($DOTFILES)/solarize.sh dark
+
+#fizsh
+if [ ! -e ~/.fizsh ]; then
+    echo "fizsh not installed, cannot configure"
+else
+    if [ -e ~/.fizsh/fizsh-prompt.zsh ]; then
+        mv ~/.fizsh/fizsh-prompt.zsh ~/.fizsh/fizsh-prompt.zsh.orig
+    fi
+    ln -s $DOTFILES/fizsh-prompt.zsh ~/.fizsh/fizsh-prompt.zsh
+    if [ -e ~/.fizsh/fizshrc ]; then
+        mv ~/.fizsh/fizshrc ~/.fizsh/fizshrc.orig
+    fi
+    ln -s $DOTFILES/fizshrc ~/.fizshrc
+    echo "fizsh configured, run \"chsh -s /bin/fizsh\" to change your default shell"
+fi
