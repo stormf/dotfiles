@@ -27,7 +27,7 @@ set backspace=indent,eol,start
 
 syntax on
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 
 set autochdir
 set backup

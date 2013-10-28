@@ -19,13 +19,13 @@ compinit
 autoload -U promptinit
 promptinit
 autoload -U colors && colors
-eval `dircolors -b`
+#eval `dircolors -b`
 #prompt pws
 
 zmodload -i zsh/complist
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-alias ls='ls --color'
+alias ls='ls -G'
 
 # Stuff for git
 parse_git_branch () {
