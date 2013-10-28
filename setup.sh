@@ -15,6 +15,19 @@ if [ ! -d ~/.vim/backup ]; then
 	mkdir ~/.vim/backup
 fi
 
+if [ ! -d ~/.vim/autoload ]; then
+	mkdir ~/.vim/autoload
+fi
+
+if [ ! -d ~/.vim/bundle ]; then
+	mkdir ~/.vim/bundle
+fi
+
+if [ ! -e ~/.vim/autoload/pathogen.vim ]; then
+    curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+    git clone git://github.com/altercation/vim-colors-solarized.git ~/vim/bundle/vim-colors-solarized
+fi
+
 if [ ! -e ~/.vimrc ]; then
 	ln -s "$DOTFILES/vimrc" ~/.vimrc
 	echo ".vimrc installed successfully"
@@ -31,7 +44,9 @@ if [ ! -e ~/.gitconfig ]; then
 	echo ".gitconfig installed successfully"
 fi
 
-sh ($DOTFILES)/solarize.sh dark
+if [[ `uname` == "Linux" ]]; then
+    sh ($DOTFILES)/solarize.sh dark
+fi
 
 #fizsh
 if [ ! -e ~/.fizsh ]; then
