@@ -19,13 +19,18 @@ compinit
 autoload -U promptinit
 promptinit
 autoload -U colors && colors
-eval `dircolors -b`
 #prompt pws
 
 zmodload -i zsh/complist
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-alias ls='ls --color'
+#Mac only
+#if [[ $IS_MAC -eq 1]]; then
+    alias ls='ls -G'
+#else
+#    alias ls='ls --color'
+#    eval `dircolors -b`
+#fi
 
 # Stuff for git
 parse_git_branch () {
@@ -45,5 +50,6 @@ function precmd() {
 
 #exports
 export EDITOR=vim
-export PATH=$PATH:/usr/local/cuda/bin
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/lib
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+#export PATH=$PATH:/usr/local/cuda/bin
+#export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/lib
