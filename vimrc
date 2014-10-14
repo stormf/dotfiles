@@ -25,9 +25,9 @@ set smartindent
 set mouse=a
 set backspace=indent,eol,start
 
-syntax on
+syntax enable
 set background=dark
-"colorscheme solarized
+colorscheme solarized
 
 set autochdir
 set backup
