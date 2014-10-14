@@ -15,13 +15,17 @@ if [ ! -d ~/.vim/backup ]; then
 	mkdir ~/.vim/backup
 fi
 
+if [ ! -e ~/.vim/autoload/pathogen.vim ]; then
+    echo "Installing pathogen"
+    mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+fi
+
 if [ ! -e ~/.vimrc ]; then
 	ln -s "$DOTFILES/vimrc" ~/.vimrc
 	echo ".vimrc installed successfully"
 fi
 
 if [ ! -e ~/.zshrc ]; then
-
 	ln -s "$DOTFILES/zshrc" ~/.zshrc
 	echo ".zshrc installed successfully"
 fi
@@ -31,7 +35,6 @@ if [ ! -e ~/.gitconfig ]; then
 	echo ".gitconfig installed successfully"
 fi
 
-sh ($DOTFILES)/solarize.sh dark
 
 #fizsh
 if [ ! -e ~/.fizsh ]; then
