@@ -31,6 +31,38 @@ alias ls='ls -G'
 parse_git_branch () {
         git branch 2> /dev/null | grep "*" | sed -e 's/* \(.*\)/ (\1)/g'
 }
+
+# virtualenv stuff
+export PREVPWD=`pwd`
+export PREVENV_PATH=
+
+handle_virtualenv(){
+  if [ "$PWD" != "$PREVPWD" ]; then
+    PREVPWD="$PWD";
+    if [ -n "$PREVENV_PATH" ]; then
+      if [ "`echo "$PWD" | grep -c $PREVENV_PATH`" = "0"  ]; then
+        deactivate
+        PREVENV_PATH=
+      fi
+    fi
+
+    # activate virtualenv dynamically
+    if [ -e "$PWD/.venv" ] && [ "$PWD" != "$PREVENV_PATH" ]; then
+      PREVENV_PATH="$PWD"
+      name=`cat $PWD/.venv`
+      if [ -z $name ]; then
+          name=`basename $PWD`
+      fi
+      workon `basename $PWD`
+    fi
+  fi
+}
+
+parse_ve () {
+    handle_virtualenv
+    basename $VIRTUAL_ENV 2> /dev/null | sed -e 's/* \(.*\)/ [\1]/g'
+}
+
 BLACK=$'\033[0m'
 RED=$'\033[38;5;167m'
 GREEN=$'\033[38;5;71m'
@@ -39,11 +71,16 @@ YELLOW=$'\033[38;5;228m'
 ORANGE=$'\033[38;5;173m'
 
 function precmd() {
-        export PROMPT="%{$RED%}%n@%m%{$BLACK%}:%{$GREEN%}%~%{$YELLOW%}$(parse_git_branch)%{$BLACK%}
+        export PROMPT="%{$RED%}%n@%m%{$BLACK%}:%{$GREEN%}%~%{$YELLOW%}$(parse_git_branch) %{$ORANGE%}$(parse_ve)%{$BLACK%}
 %# "
 }
 
 #exports
 export EDITOR=vim
-export PATH=$PATH:/usr/local/cuda/bin
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/lib
+export PATH=/usr/local/bin:$PATH
+export WORKON_HOME=~/.virtualenvs
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+export PIP_DOWNLOAD_CACHE=~/.cache/pip/
+export PROJECT_HOME=~/projects
+source `which virtualenvwrapper_lazy.sh`
+
