@@ -15,14 +15,19 @@ if [ ! -d ~/.vim/backup ]; then
     mkdir ~/.vim/backup
 fi
 
-if [ ! -e ~/.vim/autoload/pathogen.vim ]; then
-    echo "Installing pathogen"
-    mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+if [ ! -d ~/.vim/bundle ]; then
+    mkdir ~/.vim/bundle
+fi
+
+if [ ! -e ~/.vim/bundle/Vundle.vim ]
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
 if [ ! -e ~/.vimrc ]; then
     ln -s "$DOTFILES/vimrc" ~/.vimrc
     echo ".vimrc installed successfully"
+    vim +PluginInstall +qall
+    echo "Plugins installed"
 fi
 
 if [ ! -e ~/.zshrc ]; then

@@ -1,12 +1,28 @@
 
 "No vi mode
 set nocp
+
+" vundle
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+" vundle end
+
 filetype plugin on "Enable file specific plugins
 filetype indent on
 "vim latex-suite load properly
 let g:tex_flavor='latex'
 
-call pathogen#infect()
 
 set autoread
 "set 256 color mode
@@ -35,7 +51,7 @@ set backupdir=~/.vim/backup
 set noerrorbells
 set novisualbell
 set wildmenu
-set wildmode=list:longest
+set wildmode=list:longest,full
 set showmatch
 "completetion
 set completeopt=menu,preview
