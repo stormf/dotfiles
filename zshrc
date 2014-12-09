@@ -47,9 +47,9 @@ handle_virtualenv(){
     fi
 
     # activate virtualenv dynamically
-    if [ -e "$PWD/.venv" ] && [ "$PWD" != "$PREVENV_PATH" ]; then
+    if [ -e "$PWD/.virtualenv" ] && [ "$PWD" != "$PREVENV_PATH" ]; then
       PREVENV_PATH="$PWD"
-      name=`cat $PWD/.venv`
+      name=`cat $PWD/.virtualenv`
       if [ -z $name ]; then
           name=`basename $PWD`
       fi
@@ -77,10 +77,27 @@ function precmd() {
 
 #exports
 export EDITOR=vim
-export PATH=/usr/local/bin:$PATH
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export WORKON_HOME=~/.virtualenvs
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export PIP_DOWNLOAD_CACHE=~/.cache/pip/
 export PROJECT_HOME=~/projects
 source `which virtualenvwrapper_lazy.sh`
 
+
+install_requirements() {
+    pip install --extra-index-url $YOLAPI_INDEX_URL -U -r ${1:-requirements.txt}
+}
+
+yoconfig() {
+    if ["$1" = ""]; then
+        echo "USAGE: yoconfig appname environment"
+    else
+        $YOLA_GIT/yoconfigurator/bin/configurator.py --local --configs-dir $DEPLOYCONFIGS_PATH $1 $2
+    fi
+}
+
+yo() {
+    cd $YOLA_GIT/$1
+}
