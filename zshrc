@@ -59,8 +59,9 @@ handle_virtualenv(){
 }
 
 parse_ve () {
-    handle_virtualenv
-    basename $VIRTUAL_ENV 2> /dev/null | sed -e 's/* \(.*\)/ [\1]/g'
+    #handle_virtualenv
+    PARENT=`dirname $VIRTUAL_ENV` 2> /dev/null
+    basename $PARENT 2> /dev/null | sed -e 's/* \(.*\)/ [\1]/g'
 }
 
 BLACK=$'\033[0m'
@@ -86,12 +87,16 @@ export PROJECT_HOME=~/projects
 source `which virtualenvwrapper_lazy.sh`
 
 
-install_requirements() {
+yoinstall() {
+    pip install --extra-index-url $YOLAPI_INDEX_URL -U $@
+}
+
+yorequirements() {
     pip install --extra-index-url $YOLAPI_INDEX_URL -U -r ${1:-requirements.txt}
 }
 
 yoconfig() {
-    if ["$1" = ""]; then
+    if [ -z $1 ]; then
         echo "USAGE: yoconfig appname environment"
     else
         $YOLA_GIT/yoconfigurator/bin/configurator.py --local --configs-dir $DEPLOYCONFIGS_PATH $1 $2
