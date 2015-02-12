@@ -79,12 +79,15 @@ function precmd() {
 #exports
 export EDITOR=vim
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export WORKON_HOME=~/.virtualenvs
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export PIP_DOWNLOAD_CACHE=~/.cache/pip/
 export PROJECT_HOME=~/projects
 source `which virtualenvwrapper_lazy.sh`
+
+
+source $PERSONAL_GIT/hhighlighter/h.sh
 
 
 yoinstall() {
@@ -105,4 +108,10 @@ yoconfig() {
 
 yo() {
     cd $YOLA_GIT/$1
+}
+
+function fuck() {
+  if killall -9 "$2"; then
+    echo ; echo " (╯°□°）╯︵$(echo "$2"|toilet -f term -F rotate)"; echo
+  fi
 }
