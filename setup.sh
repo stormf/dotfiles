@@ -32,8 +32,12 @@ fi
 
 if [ ! -e ~/.zshrc ]; then
     ln -s "$DOTFILES/zshrc" ~/.zshrc
-    ln -s "$DOTFILES/zsh.d" ~/.zsh.d
     echo ".zshrc installed successfully"
+fi
+
+if [ ! -e ~/.zsh.d ]; then
+    ln -s "$DOTFILES/zsh.d" ~/.zsh.d
+    touch ~/.zsh.d/private.zsh
 fi
 
 if [ ! -e ~/.gitconfig ]; then
