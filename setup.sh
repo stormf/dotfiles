@@ -32,7 +32,7 @@ fi
 
 if [ ! -e ~/.zshrc ]; then
     ln -s "$DOTFILES/zshrc" ~/.zshrc
-    ls -s "$DOTFILES/zsh.d" ~/.zsh.d
+    ln -s "$DOTFILES/zsh.d" ~/.zsh.d
     echo ".zshrc installed successfully"
 fi
 

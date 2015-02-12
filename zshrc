@@ -10,7 +10,4 @@ source ~/.zsh.d/prompt.zsh
 source ~/.zsh.d/yola.zsh
 source ~/.zsh.d/aliases.zsh
 
-
-export PERSONAL_GIT=~/personal/git/
 source $PERSONAL_GIT/hhighlighter/h.sh
-
