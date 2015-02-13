@@ -1,4 +1,8 @@
 
+autoload -U promptinit
+promptinit
+autoload -U colors && colors
+
 # Stuff for git
 parse_git_branch () {
         git branch 2> /dev/null | grep "*" | sed -e 's/* \(.*\)/ (\1)/g'
