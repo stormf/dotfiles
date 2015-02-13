@@ -1,0 +1,11 @@
+#!/bin/bash
+
+brew install mtr 2>/dev/null || brew upgrade mtr 2>/dev/null || echo "mtr up to date"
+
+# fix permissions
+CWD=`pwd`
+cd /usr/local/sbin
+sudo chown root:wheel `readlink /usr/local/sbin/mtr`
+sudo chmod +s `readlink /usr/local/sbin/mtr`
+
+cd $CWD
