@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# If any command fails, we should exit with a failure
+set -e
+
+# Install homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# add to your PATH
+echo 'export PATH=/usr/local/bin:$PATH' >> ~/.bash_profile
+source ~/.bash_profile
+
+# ensure it's up to date
+brew doctor
+brew update
+
+# install brew extensions
+brew tap homebrew/versions
