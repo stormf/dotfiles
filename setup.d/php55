@@ -1,0 +1,6 @@
+brew update
+
+brew tap homebrew/homebrew-php
+
+brew install php55-intl
+brew install homebrew/php/composer
