@@ -6,10 +6,6 @@ set -e
 # Install homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# add to your PATH
-echo 'export PATH=/usr/local/bin:$PATH' >> ~/.bash_profile
-source ~/.bash_profile
-
 # ensure it's up to date
 brew doctor
 brew update
