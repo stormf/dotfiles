@@ -62,6 +62,7 @@ set showmatch
 set completeopt=menu,preview
 set ofu=syntaxcomplete#Complete
 "search
+set hlsearch
 set incsearch
 set ignorecase
 set smartcase
