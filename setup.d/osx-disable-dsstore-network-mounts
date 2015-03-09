@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ -n "${OSX}" ]; then
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+fi
