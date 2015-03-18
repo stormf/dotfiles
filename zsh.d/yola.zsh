@@ -3,10 +3,12 @@ export DEPLOYCONFIGS_PATH=$YOLA_GIT/deployconfigs/configs
 export YOLA_SRC=$YOLA_GIT
 
 yoinstall() {
+    activate
     pip install --extra-index-url $YOLAPI_INDEX_URL -U $@
 }
 
 yorequirements() {
+    activate
     pip install --extra-index-url $YOLAPI_INDEX_URL -U -r ${1:-requirements.txt}
 }
 
@@ -22,5 +24,5 @@ yo() {
     cd $YOLA_GIT/$1
 }
 
-alias open_outer="curl -d \"Outer=open-door\" ${YOLA_DOOR_URL}"
-alias open_inner="curl -d \"Inner=open-door\" ${YOLA_DOOR_URL}"
+alias odoor="curl -d \"Outer=open-door\" ${YOLA_DOOR_URL}"
+alias idoor="curl -d \"Inner=open-door\" ${YOLA_DOOR_URL}"
