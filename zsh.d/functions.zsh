@@ -15,3 +15,12 @@ function git-clean() {
     git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d
     git checkout $CURRENT_BRANCH
 }
+
+function activate() {
+    if [ ! -e virtualenv/bin/activate ]; then
+        if [ -f requirements.txt ]; then
+            build-virtualenv
+        fi
+    fi
+    source virtualenv/bin/activate
+}

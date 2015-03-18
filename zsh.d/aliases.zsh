@@ -7,7 +7,5 @@ if [[ $LINUX -eq 1 ]]; then
     eval `dircolors -b`
 fi
 
-alias activate='source virtualenv/bin/activate'
-
 alias gits='git status'
 alias gitd='git diff'
