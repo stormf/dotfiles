@@ -1,0 +1,3 @@
+[submodule "external/hhighlighter"]
+	path = external/hhighlighter
+	url = git@github.com:paoloantinori/hhighlighter.git
