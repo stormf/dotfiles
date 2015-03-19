@@ -10,4 +10,4 @@ source ~/.zsh.d/prompt.zsh
 source ~/.zsh.d/yola.zsh
 source ~/.zsh.d/aliases.zsh
 
-source $PERSONAL_GIT/hhighlighter/h.sh
+source $PERSONAL_GIT/dotfiles/external/hhighlighter/h.sh

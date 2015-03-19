@@ -7,6 +7,11 @@ realpath() {
 SCRIPT_PATH=`realpath $0`
 DOTFILES=`dirname $SCRIPT_PATH`
 
+
+if [ ! -d ~/bin ]; then
+    mkdir ~/bin
+fi
+
 if [ ! -d ~/.vim ]; then
     mkdir ~/.vim
 fi
