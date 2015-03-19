@@ -17,10 +17,8 @@ function git-clean() {
 }
 
 function activate() {
-    if [ ! -e virtualenv/bin/activate ]; then
-        if [ -f requirements.txt ]; then
-            build-virtualenv
-        fi
+    if [ -f requirements.txt ]; then
+        build-virtualenv
     fi
     source virtualenv/bin/activate
 }
