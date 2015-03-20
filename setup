@@ -46,7 +46,7 @@ if [ ! -e ~/.zsh.d ]; then
 fi
 
 if [ ! -e ~/.gitconfig ]; then
-    ln -s "$DOTFILES/gitconfig" ~/.gitconfig
-    echo ".gitconfig installed successfully"
+    ln -s "$DOTFILES/gitignore_global" ~/.gitignore_global
+    echo ".gitignore installed successfully"
 fi
 

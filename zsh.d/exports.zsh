@@ -1,6 +1,6 @@
 #exports
 export EDITOR=vim
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/git-core/contrib/diff-highlight:$PATH
 export PIP_DOWNLOAD_CACHE=~/.cache/pip/
 export PERSONAL_GIT=~/personal/git/
 
