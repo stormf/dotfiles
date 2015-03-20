@@ -24,7 +24,7 @@ yo() {
     cd $YOLA_GIT/$1
 }
 
-# git config --global url.http://git.ct.yola.net/git/.insteadOf yolact:
+# git config --global url.https://git.ct.yola.net/git/.insteadOf yolact:
 # git config --global url.git@github.com:.insteadOf gh:
 function yola_clone() {(
     set -ex
