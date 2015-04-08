@@ -17,8 +17,12 @@ function git-clean() {
 }
 
 function activate() {
-    if [ -f requirements.txt ]; then
-        build-virtualenv
+    if [[ `parse_ve` == "" ]]; then
+        if [ -f requirements.txt ]; then
+            build-virtualenv
+        fi
+        source virtualenv/bin/activate
+    else
+        echo "already in virtualenv"
     fi
-    source virtualenv/bin/activate
 }
