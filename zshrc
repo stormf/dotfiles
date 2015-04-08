@@ -9,5 +9,12 @@ source ~/.zsh.d/functions.zsh
 source ~/.zsh.d/prompt.zsh
 source ~/.zsh.d/yola.zsh
 source ~/.zsh.d/aliases.zsh
+source ~/.zsh.d/completions.zsh
 
-source $PERSONAL_GIT/dotfiles/external/hhighlighter/h.sh
+source $DOTFILES/external/antigen/antigen.zsh
+antigen bundle robbyrussell/oh-my-zsh plugins/knife
+antigen bundle robbyrussell/oh-my-zsh plugins/brew
+antigen bundle robbyrussell/oh-my-zsh plugins/mosh
+antigen bundle paoloantinori/hhighlighter
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen apply
