@@ -1,0 +1,21 @@
+# Brewfile
+
+brew 'curl'
+brew 'wget'
+brew 'git'
+brew 'ack'
+brew 'the_silver_searcher'
+brew 'osxutils'
+brew 'ssh-copy-id'
+brew 'mosh'
+brew 'nmap'
+brew 'toilet'
+brew 'vim'
+brew 'zsh'
+brew 'zsh-completions'
+brew 'zsh-syntax-highlighting'
+
+# php
+tap 'homebrew/homebrew-php'
+brew 'php55-intl'
+brew 'homebrew/php/composer'
