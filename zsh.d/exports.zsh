@@ -2,7 +2,6 @@
 export EDITOR=vim
 export LOCAL_BIN_PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/git-core/contrib/diff-highlight
 export PATH=$LOCAL_BIN_PATH:$PATH
-export PIP_DOWNLOAD_CACHE=~/.cache/pip/
 export PERSONAL_GIT=~/personal/git/
 export DOTFILES=~/personal/git/dotfiles
 
