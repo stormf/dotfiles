@@ -1,7 +1,11 @@
 # Brewfile
 
+tap 'homebrew/versions'
+tap 'homebrew/dupes'
+
 brew 'curl'
 brew 'wget'
+brew 'python'
 brew 'git'
 brew 'ack'
 brew 'the_silver_searcher'
@@ -14,6 +18,7 @@ brew 'vim'
 brew 'zsh'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
+brew 'xz'
 
 # php
 tap 'homebrew/homebrew-php'
