@@ -12,9 +12,13 @@ source ~/.zsh.d/aliases.zsh
 source ~/.zsh.d/completions.zsh
 
 source $DOTFILES/external/antigen/antigen.zsh
-antigen bundle robbyrussell/oh-my-zsh plugins/knife
-antigen bundle robbyrussell/oh-my-zsh plugins/brew
-antigen bundle robbyrussell/oh-my-zsh plugins/mosh
-antigen bundle paoloantinori/hhighlighter
-antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen bundles <<EOBUNDLES
+    robbyrussell/oh-my-zsh plugins/knife
+    robbyrussell/oh-my-zsh plugins/brew
+    robbyrussell/oh-my-zsh plugins/mosh
+    paoloantinori/hhighlighter
+    zsh-users/zsh-syntax-highlighting
+EOBUNDLES
+
 antigen apply
