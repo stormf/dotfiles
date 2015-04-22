@@ -3,6 +3,11 @@
 tap 'homebrew/versions'
 tap 'homebrew/dupes'
 
+brew 'zsh'
+brew 'zsh-completions'
+brew 'zsh-syntax-highlighting'
+brew 'vim'
+
 brew 'curl'
 brew 'wget'
 brew 'python'
@@ -14,13 +19,24 @@ brew 'ssh-copy-id'
 brew 'mosh'
 brew 'nmap'
 brew 'toilet'
-brew 'vim'
-brew 'zsh'
-brew 'zsh-completions'
-brew 'zsh-syntax-highlighting'
 brew 'xz'
 
 # php
 tap 'homebrew/homebrew-php'
 brew 'php55-intl'
 brew 'homebrew/php/composer'
+
+# Casks
+brew 'caskroom/cask/brew-cask'
+cask 'iterm2'
+cask 'google-chrome'
+cask 'firefox'
+
+cask 'sublime-text'
+
+cask 'dropbox'
+cask 'adium'
+cask 'skype'
+cask 'chefdk'
+
+cask 'sourcetree'
