@@ -7,11 +7,20 @@ realpath() {
 SCRIPT_PATH=`realpath $0`
 DOTFILES=`dirname $SCRIPT_PATH`
 
+if [ `uname` == `Darwin` ]; then
+    cd $DOTFILES/setup.d
+    ./xcode-cli
+    ./brew
+    ./mtr
+    ./osx-disable-dsstore-network-mounts
+fi
 
+# bin dir
 if [ ! -d ~/bin ]; then
     mkdir ~/bin
 fi
 
+# vim stuff
 if [ ! -d ~/.vim ]; then
     mkdir ~/.vim
 fi
@@ -35,6 +44,7 @@ if [ ! -e ~/.vimrc ]; then
     echo "Plugins installed"
 fi
 
+# zsh
 if [ ! -e ~/.zshrc ]; then
     ln -s "$DOTFILES/zshrc" ~/.zshrc
     echo ".zshrc installed successfully"
@@ -45,8 +55,13 @@ if [ ! -e ~/.zsh.d ]; then
     touch ~/.zsh.d/private.zsh
 fi
 
+echo "Remember to add /usr/local/bin/zsh to /etc/shells and run chsh -s /usr/local/bin/zsh"
+
+# git
 if [ ! -e ~/.gitignore_global ]; then
     ln -s "$DOTFILES/gitignore_global" ~/.gitignore_global
     echo ".gitignore installed successfully"
 fi
+
+$DOTFILES/setup.d/configure-git
 
