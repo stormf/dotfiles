@@ -11,14 +11,21 @@ source ~/.zsh.d/yola.zsh
 source ~/.zsh.d/aliases.zsh
 source ~/.zsh.d/completions.zsh
 
-source $DOTFILES/external/antigen/antigen.zsh
+source "$DOTFILES/external/zgen/zgen.zsh"
 
-antigen bundles <<EOBUNDLES
-    robbyrussell/oh-my-zsh plugins/knife
-    robbyrussell/oh-my-zsh plugins/brew
-    robbyrussell/oh-my-zsh plugins/mosh
-    paoloantinori/hhighlighter
-    zsh-users/zsh-syntax-highlighting
-EOBUNDLES
+# check if there's no init script
+if ! zgen saved; then
+    echo "Creating a zgen save"
 
-antigen apply
+    zgen oh-my-zsh
+
+    # plugins
+    zgen oh-my-zsh plugins/knife
+    zgen oh-my-zsh plugins/brew
+    zgen oh-my-zsh plugins/mosh
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load paoloantinori/hhighlighter
+
+    #save all to init script
+    zgen save
+fi
