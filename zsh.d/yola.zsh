@@ -27,7 +27,6 @@ yo() {
 # git config --global url.http://git.ct.yola.net/git/.insteadOf yolact:
 # git config --global url.git@github.com:.insteadOf gh:
 function yola_clone() {(
-    set -ex
     local app=$1
     host git.ct.yola.net &> /dev/null
     local ct=$?
