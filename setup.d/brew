@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# If any command fails, we should exit with a failure
+set -e
+
+# Install homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# ensure it's up to date
+brew doctor
+brew update
+
+# install brew extensions
+brew tap Homebrew/brewdler
+
+brew brewdle

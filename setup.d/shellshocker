@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl https://shellshocker.net/shellshock_test.sh | bash

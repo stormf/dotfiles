@@ -1,55 +1,31 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=5000
-SAVEHIST=5000
-setopt appendhistory
-setopt sharehistory
-setopt auto_cd
-setopt extended_glob
-setopt noclobber
-bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '~/.zshrc'
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
 
-autoload -U promptinit
-promptinit
-autoload -U colors && colors
-#prompt pws
+source ~/.zsh.d/checks.zsh
+source ~/.zsh.d/exports.zsh
 
-zmodload -i zsh/complist
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+source ~/.zsh.d/private.zsh
 
-#Mac only
-#if [[ $IS_MAC -eq 1]]; then
-    alias ls='ls -G'
-#else
-#    alias ls='ls --color'
-#    eval `dircolors -b`
-#fi
+source ~/.zsh.d/opts.zsh
+source ~/.zsh.d/functions.zsh
+source ~/.zsh.d/prompt.zsh
+source ~/.zsh.d/yola.zsh
+source ~/.zsh.d/aliases.zsh
+source ~/.zsh.d/completions.zsh
 
-# Stuff for git
-parse_git_branch () {
-        git branch 2> /dev/null | grep "*" | sed -e 's/* \(.*\)/ (\1)/g'
-}
-BLACK=$'\033[0m'
-RED=$'\033[38;5;167m'
-GREEN=$'\033[38;5;71m'
-BLUE=$'\033[38;5;111m'
-YELLOW=$'\033[38;5;228m'
-ORANGE=$'\033[38;5;173m'
+source "$DOTFILES/external/zgen/zgen.zsh"
 
-function precmd() {
-        export PROMPT="%{$RED%}%n@%m%{$BLACK%}:%{$GREEN%}%~%{$YELLOW%}$(parse_git_branch)%{$BLACK%}
-%# "
-}
+# check if there's no init script
+if ! zgen saved; then
+    echo "Creating a zgen save"
 
-#exports
-export EDITOR=vim
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-#export PATH=$PATH:/usr/local/cuda/bin
-#export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/lib
+    zgen oh-my-zsh
+
+    # plugins
+    zgen oh-my-zsh plugins/knife
+    zgen oh-my-zsh plugins/brew
+    zgen oh-my-zsh plugins/mosh
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load paoloantinori/hhighlighter
+
+    #save all to init script
+    zgen save
+fi

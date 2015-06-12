@@ -1,0 +1,42 @@
+# Brewfile
+
+tap 'homebrew/versions'
+tap 'homebrew/dupes'
+
+brew 'zsh'
+brew 'zsh-completions'
+brew 'zsh-syntax-highlighting'
+brew 'vim'
+
+brew 'curl'
+brew 'wget'
+brew 'python'
+brew 'git'
+brew 'ack'
+brew 'the_silver_searcher'
+brew 'osxutils'
+brew 'ssh-copy-id'
+brew 'mosh'
+brew 'nmap'
+brew 'toilet'
+brew 'xz'
+
+# php
+tap 'homebrew/homebrew-php'
+brew 'php55-intl'
+brew 'homebrew/php/composer'
+
+# Casks
+brew 'caskroom/cask/brew-cask'
+cask 'iterm2'
+cask 'google-chrome'
+cask 'firefox'
+
+cask 'sublime-text'
+
+cask 'dropbox'
+cask 'adium'
+cask 'skype'
+cask 'chefdk'
+
+cask 'sourcetree'
