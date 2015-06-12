@@ -16,7 +16,26 @@ BLUE=$'\033[38;5;111m'
 YELLOW=$'\033[38;5;228m'
 ORANGE=$'\033[38;5;173m'
 
+format_git_branch () {
+    git_branch=$(parse_git_branch)
+    if [[ -n "$git_branch" ]]; then
+        print '%{$YELLOW%} ($(parse_git_branch))'
+    fi
+}
+
+format_exit_status () {
+    print '%(?.%{$GREEN%}.%{$RED%})%?'
+}
+
+format_ve () {
+    print '%{$ORANGE%}$(parse_ve)'
+}
+
+format_prefix () {
+    print '%{$RED%}%n@%m%{$BLACK%}:%{$GREEN%}%~'
+}
+
 function precmd() {
-        export PROMPT="%{$RED%}%n@%m%{$BLACK%}:%{$GREEN%}%~%{$YELLOW%}$(parse_git_branch) %{$ORANGE%}$(parse_ve)%{$BLACK%}
+        export PROMPT="$(format_prefix) $(format_git_branch) $(format_ve) %{$BLACK%}%T $(format_exit_status) %{$BLACK%}
 %# "
 }
