@@ -6,11 +6,11 @@ function fuck() {
 }
 
 parse_git_branch () {
-        git branch 2> /dev/null | grep "*" | sed -e 's/* \(.*\)/ (\1)/g'
+        git branch 2> /dev/null | grep "*" | sed -e 's/* \(.*\)/\1/g'
 }
 
 function git-clean() {
-    CURRENT_BRANCH=`parse_git_branch`
+    CURRENT_BRANCH=`parse_git_branch | tr -d '[[:space:]]'`
     git checkout master
     git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d
     git checkout $CURRENT_BRANCH
