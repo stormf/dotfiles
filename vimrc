@@ -85,3 +85,7 @@ map <silent> <F3> :!wc -w %<CR>
 
 "when vimrc edited reload it
 autocmd! bufwritepost vimrc source ~/.vimrc
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
