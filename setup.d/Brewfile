@@ -22,9 +22,9 @@ brew 'toilet'
 brew 'xz'
 
 # php
-tap 'homebrew/homebrew-php'
-brew 'php55-intl'
-brew 'homebrew/php/composer'
+#tap 'homebrew/homebrew-php'
+#brew 'php55-intl'
+#brew 'homebrew/php/composer'
 
 # Casks
 brew 'caskroom/cask/brew-cask'
@@ -37,6 +37,6 @@ cask 'sublime-text'
 cask 'dropbox'
 cask 'adium'
 cask 'skype'
-cask 'chefdk'
+#cask 'chefdk'
 
 cask 'sourcetree'
