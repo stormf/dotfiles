@@ -16,10 +16,13 @@ brew 'ack'
 brew 'the_silver_searcher'
 brew 'osxutils'
 brew 'ssh-copy-id'
+brew 'tree'
 brew 'mosh'
 brew 'nmap'
 brew 'toilet'
 brew 'xz'
+brew 'jq'
+brew 'youtube-dl'
 
 # php
 #tap 'homebrew/homebrew-php'
@@ -31,12 +34,16 @@ brew 'caskroom/cask/brew-cask'
 cask 'iterm2'
 cask 'google-chrome'
 cask 'firefox'
-
+cask 'atom'
 cask 'sublime-text'
 
 cask 'dropbox'
 cask 'adium'
 cask 'skype'
+cask 'keepassx'
+cask 'alfred'
+cask 'divvy'
+
 #cask 'chefdk'
 
 cask 'sourcetree'
