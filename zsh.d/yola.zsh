@@ -16,7 +16,7 @@ yoconfig() {
     if [ -z $1 ]; then
         echo "USAGE: yoconfig appname environment"
     else
-        $YOLA_GIT/yoconfigurator/bin/configurator.py --local --configs-dir $DEPLOYCONFIGS_PATH $1 $2
+        $YOLA_GIT/yoconfigurator/bin/configurator.py --local --configs-dir $DEPLOYCONFIGS_PATH $@
     fi
 }
 
