@@ -37,6 +37,8 @@ cask 'firefox'
 cask 'atom'
 cask 'sublime-text'
 
+cask 'caskroom/fonts/font-hack'
+
 cask 'dropbox'
 cask 'adium'
 cask 'skype'

@@ -89,3 +89,8 @@ autocmd! bufwritepost vimrc source ~/.vimrc
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
+if has('mouse_sgr')
+    set ttymouse=sgr
+endif
+
+let g:vimpager_less_mode = 0

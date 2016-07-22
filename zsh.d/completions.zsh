@@ -26,3 +26,7 @@ zstyle ':completion:*:kill:*' force-list always
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=29=34"
 zstyle ':completion:*:*:killall:*' menu yes select
 zstyle ':completion:*:killall:*' force-list always
+
+eval "`pip completion --zsh`"
+
+source /usr/local/share/zsh/site-functions/_aws

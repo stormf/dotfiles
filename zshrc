@@ -11,9 +11,11 @@ source ~/.zsh.d/yola.zsh
 source ~/.zsh.d/aliases.zsh
 source ~/.zsh.d/completions.zsh
 
-source "$DOTFILES/external/zgen/zgen.zsh"
+# Stop oh-my-zsh auto updating
+DISABLE_AUTO_UPDATE="true"
 
-# check if there's no init script
+# zgen to load plugins FAST
+source "$DOTFILES/external/zgen/zgen.zsh"
 if ! zgen saved; then
     echo "Creating a zgen save"
 
@@ -23,6 +25,10 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/knife
     zgen oh-my-zsh plugins/brew
     zgen oh-my-zsh plugins/mosh
+    zgen oh-my-zsh plugins/pip
+    zgen oh-my-zsh plugins/django
+    zgen oh-my-zsh plugins/extract
+
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load paoloantinori/hhighlighter
 

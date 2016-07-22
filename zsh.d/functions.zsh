@@ -19,10 +19,24 @@ function git-clean() {
 function activate() {
     if [[ `parse_ve` == "" ]]; then
         if [ -f requirements.txt ]; then
+            export LDFLAGS="-L$(brew --prefix openssl)/lib"
+            export CFLAGS="-I$(brew --prefix openssl)/include"
+            export SWIG_FEATURES="-cpperraswarn -includeall -I$(brew --prefix openssl)/include"
             build-virtualenv
+            unset LDFLAGS
+            unset CFLAGS
+            unset SWIG_FEATURES
+            source virtualenv/bin/activate
+        else
+            echo "requirements.txt not found"
         fi
-        source virtualenv/bin/activate
     else
         echo "already in virtualenv"
     fi
+}
+
+function ne() {
+    local cmd="$1"
+    shift
+    "$(npm bin)/$cmd" "$@"
 }

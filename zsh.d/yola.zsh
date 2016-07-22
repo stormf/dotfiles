@@ -4,12 +4,24 @@ export YOLA_SRC=$YOLA_GIT
 
 yoinstall() {
     activate
-    pip install --extra-index-url $YOLAPI_INDEX_URL -U $@
+    export LDFLAGS="-L$(brew --prefix openssl)/lib"
+    export CFLAGS="-I$(brew --prefix openssl)/include"
+    export SWIG_FEATURES="-cpperraswarn -includeall -I$(brew --prefix openssl)/include"
+    pip install -i $YOLAPI_INDEX_URL -U $@
+    unset LDFLAGS
+    unset CFLAGS
+    unset SWIG_FEATURES
 }
 
 yorequirements() {
-    activate
-    pip install --extra-index-url $YOLAPI_INDEX_URL -U -r ${1:-requirements.txt}
+    . ./virtualenv/bin/activate
+    export LDFLAGS="-L$(brew --prefix openssl)/lib"
+    export CFLAGS="-I$(brew --prefix openssl)/include"
+    export SWIG_FEATURES="-cpperraswarn -includeall -I$(brew --prefix openssl)/include"
+    pip install -i $YOLAPI_INDEX_URL -r ${1:-requirements.txt}
+    unset LDFLAGS
+    unset CFLAGS
+    unset SWIG_FEATURES
 }
 
 yoconfig() {
@@ -49,3 +61,16 @@ function yola_clone() {(
 
 alias odoor="curl -d \"Outer=open-door\" ${YOLA_DOOR_URL}"
 alias idoor="curl -d \"Inner=open-door\" ${YOLA_DOOR_URL}"
+
+python_manage_dotpy () {
+    # kill pyc files
+    find . -name '*.pyc' -maxdepth 5 -delete
+    # find manage.py
+    mandotpy=`find . -iname manage.py -maxdepth 3 | head -1`
+    if [[ -e $mandotpy ]]; then
+        python $mandotpy $@
+    else
+        echo "No fucking clue where manage.py is."
+    fi
+}
+

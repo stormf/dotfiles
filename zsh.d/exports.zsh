@@ -1,4 +1,5 @@
 #exports
+#export SSH_AUTH_SOCK=/Users/$USER/.gnupg/S.gpg-agent.ssh
 export EDITOR=vim
 export LOCAL_BIN_PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/git-core/contrib/diff-highlight
 export PATH=$LOCAL_BIN_PATH:$PATH
