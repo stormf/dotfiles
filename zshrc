@@ -2,14 +2,6 @@
 source ~/.zsh.d/checks.zsh
 source ~/.zsh.d/exports.zsh
 
-source ~/.zsh.d/private.zsh
-
-source ~/.zsh.d/opts.zsh
-source ~/.zsh.d/functions.zsh
-source ~/.zsh.d/prompt.zsh
-source ~/.zsh.d/yola.zsh
-source ~/.zsh.d/aliases.zsh
-source ~/.zsh.d/completions.zsh
 
 # Stop oh-my-zsh auto updating
 DISABLE_AUTO_UPDATE="true"
@@ -22,10 +14,8 @@ if ! zgen saved; then
     zgen oh-my-zsh
 
     # plugins
+    zgen oh-my-zsh plugins/aws
     zgen oh-my-zsh plugins/knife
-    zgen oh-my-zsh plugins/brew
-    zgen oh-my-zsh plugins/mosh
-    zgen oh-my-zsh plugins/pip
     zgen oh-my-zsh plugins/django
     zgen oh-my-zsh plugins/extract
 
@@ -35,3 +25,12 @@ if ! zgen saved; then
     #save all to init script
     zgen save
 fi
+
+source ~/.zsh.d/private.zsh
+
+source ~/.zsh.d/opts.zsh
+source ~/.zsh.d/functions.zsh
+source ~/.zsh.d/prompt.zsh
+source ~/.zsh.d/yola.zsh
+source ~/.zsh.d/aliases.zsh
+source ~/.zsh.d/completions.zsh
