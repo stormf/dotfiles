@@ -1,7 +1,6 @@
 #!/bin/bash
 
-git config --global user.name "Henk Joubert"
-git config --global user.email "jouberthenk@gmail.com"
+git config --global user.name "Storm Joubert"
 git config --global color.ui true
 git config --global push.default current
 git config --global credential.helper store
@@ -14,3 +13,4 @@ git config --global pager.diff 'diff-highlight | less'
 
 git config --global url.git@github.com:.insteadOf gh:
 git config --global url.git@github.com:.insteadOf github:
+git config --global url.http://git.ct.yola.net/git/.insteadOf yolact:

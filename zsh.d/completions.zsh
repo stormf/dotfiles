@@ -28,5 +28,3 @@ zstyle ':completion:*:*:killall:*' menu yes select
 zstyle ':completion:*:killall:*' force-list always
 
 eval "`pip completion --zsh`"
-
-source /usr/local/share/zsh/site-functions/_aws

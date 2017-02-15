@@ -11,6 +11,6 @@ brew doctor
 brew update
 
 # install brew extensions
-brew tap Homebrew/brewdler
+brew tap homebrew/bundle
 
-brew brewdle
+brew bundle

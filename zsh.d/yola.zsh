@@ -39,6 +39,7 @@ yo() {
 # git config --global url.http://git.ct.yola.net/git/.insteadOf yolact:
 # git config --global url.git@github.com:.insteadOf gh:
 function yola_clone() {(
+    cd $YOLA_SRC 
     local app=$1
     host git.ct.yola.net &> /dev/null
     local ct=$?
@@ -48,7 +49,7 @@ function yola_clone() {(
         git clone "gh:yola/$app.git"
     fi
     cd "$app"
-    git config user.email henk@yola.com
+    git config user.email storm@yola.com
     if [ $ct -eq 0 ]; then
         git remote rename origin ctmirror
         git remote add origin "gh:yola/$app.git"

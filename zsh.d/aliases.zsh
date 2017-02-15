@@ -1,5 +1,6 @@
 if [[ $OSX -eq 1 ]]; then
     alias ls='ls -G'
+    alias gpg=gpg2
 fi
 
 if [[ $LINUX -eq 1 ]]; then

@@ -34,3 +34,6 @@ source ~/.zsh.d/prompt.zsh
 source ~/.zsh.d/yola.zsh
 source ~/.zsh.d/aliases.zsh
 source ~/.zsh.d/completions.zsh
+
+# iterm 2 shell integration TODO: source this properly
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
