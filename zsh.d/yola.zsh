@@ -48,9 +48,6 @@ function yola_clone() {(
     git branch --set-upstream-to origin/master master
 )}
 
-alias odoor="envchain yola curl -d \"Outer=open-door\" ${YOLA_DOOR_URL}"
-alias idoor="envchain yola curl -d \"Inner=open-door\" ${YOLA_DOOR_URL}"
-
 python_manage_dotpy () {
     # kill pyc files
     find . -name '*.pyc' -maxdepth 5 -delete
