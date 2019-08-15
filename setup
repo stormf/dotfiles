@@ -64,4 +64,5 @@ if [ ! -e ~/.gitignore_global ]; then
 fi
 
 $DOTFILES/setup.d/configure-git
+echo "Remember to add your git email to global config"
 
