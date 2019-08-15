@@ -24,15 +24,15 @@ format_git_branch () {
 }
 
 format_exit_status () {
-    print '%(?.%{$GREEN%}.%{$RED%})%?'
+    print "%(?.%{$GREEN%}.%{$RED%})%?"
 }
 
 format_ve () {
-    print '%{$ORANGE%}$(parse_ve)'
+    print "%{$ORANGE%}$(parse_ve)"
 }
 
 format_prefix () {
-    print '%{$RED%}%n@%m%{$BLACK%}:%{$GREEN%}%~'
+    print "%{$RED%}%n@%m%{$BLACK%}:%{$GREEN%}%~"
 }
 
 function precmd() {

@@ -5,13 +5,13 @@ export GPG_TTY
 
 export EDITOR=vim
 export LOCAL_BIN_PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/git-core/contrib/diff-highlight
-export LOCAL_BIN_PATH="/usr/local/opt/gnupg@2.1/bin:$LOCAL_BIN_PATH"
+export LOCAL_BIN_PATH="/usr/local/opt/curl/bin:$LOCAL_BIN_PATH"
 export PATH=$LOCAL_BIN_PATH:$PATH
 export PERSONAL_GIT=~/personal
 export DOTFILES=~/personal/dotfiles
 
 if [[ $OSX -eq 1 ]]; then
-    export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+    #export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 
     # locale
     export LC_ALL=en_US.UTF-8
@@ -36,3 +36,6 @@ export TTC_CELSIUS=true
 export TTC_APIKEYS=true
 # Refresh the dashboard every 20 minutes.
 export TTC_UPDATE_INTERVAL=20
+
+# disable virtualenv prompt mangling
+export VIRTUAL_ENV_DISABLE_PROMPT=1

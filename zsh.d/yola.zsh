@@ -7,7 +7,7 @@ yoinstall() {
     export LDFLAGS="-L$(brew --prefix openssl)/lib"
     export CFLAGS="-I$(brew --prefix openssl)/include"
     export SWIG_FEATURES="-cpperraswarn -includeall -I$(brew --prefix openssl)/include"
-    pip install -i $YOLAPI_INDEX_URL -U $@
+    envchain yola pip install -i $YOLAPI_INDEX_URL -U $@
     unset LDFLAGS
     unset CFLAGS
     unset SWIG_FEATURES
@@ -18,7 +18,7 @@ yorequirements() {
     export LDFLAGS="-L$(brew --prefix openssl)/lib"
     export CFLAGS="-I$(brew --prefix openssl)/include"
     export SWIG_FEATURES="-cpperraswarn -includeall -I$(brew --prefix openssl)/include"
-    pip install -i $YOLAPI_INDEX_URL -r ${1:-requirements.txt}
+    envchain yola pip install -i $YOLAPI_INDEX_URL -r ${1:-requirements.txt}
     unset LDFLAGS
     unset CFLAGS
     unset SWIG_FEATURES
@@ -41,27 +41,15 @@ yo() {
 function yola_clone() {(
     cd $YOLA_SRC 
     local app=$1
-    host git.ct.yola.net &> /dev/null
-    local ct=$?
-    if [ $ct -eq 0 ]; then
-        git clone "yolact:yola/$app.git"
-    else
-        git clone "gh:yola/$app.git"
-    fi
+    git clone "gh:yola/$app.git"
     cd "$app"
     git config user.email storm@yola.com
-    if [ $ct -eq 0 ]; then
-        git remote rename origin ctmirror
-        git remote add origin "gh:yola/$app.git"
-    else
-        git remote add ctmirror "yolact:yola/$app.git"
-    fi
     git fetch origin
     git branch --set-upstream-to origin/master master
 )}
 
-alias odoor="curl -d \"Outer=open-door\" ${YOLA_DOOR_URL}"
-alias idoor="curl -d \"Inner=open-door\" ${YOLA_DOOR_URL}"
+alias odoor="envchain yola curl -d \"Outer=open-door\" ${YOLA_DOOR_URL}"
+alias idoor="envchain yola curl -d \"Inner=open-door\" ${YOLA_DOOR_URL}"
 
 python_manage_dotpy () {
     # kill pyc files
