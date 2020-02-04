@@ -1,8 +1,5 @@
 # Brewfile
 
-tap 'homebrew/versions'
-tap 'homebrew/dupes'
-
 brew 'zsh'
 brew 'zsh-completions'
 brew 'vim'
@@ -40,19 +37,13 @@ cask 'iterm2'
 cask 'google-chrome'
 cask 'firefox'
 cask 'slack'
-cask 'karabiner'
 cask 'visual-studio-code'
-cask 'atom'
 cask 'toggl'
 
-cask 'dropbox'
 cask 'keepassxc'
-cask 'alfred'
 cask 'divvy'
 
-cask 'chefdk'
-
 cask 'pycharm-ce'
-cask 'discord'
 cask 'vlc'
 cask 'signal'
+

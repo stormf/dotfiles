@@ -13,4 +13,4 @@ git config --global pager.diff 'diff-highlight | less'
 
 git config --global url.git@github.com:.insteadOf gh:
 git config --global url.git@github.com:.insteadOf github:
-git config --global url.http://git.ct.yola.net/git/.insteadOf yolact:
+

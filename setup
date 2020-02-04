@@ -7,13 +7,17 @@ realpath() {
 SCRIPT_PATH=`realpath $0`
 DOTFILES=`dirname $SCRIPT_PATH`
 
-if [ `uname` == `Darwin` ]; then
+if [ `uname` == 'Darwin' ]; then
     cd $DOTFILES/setup.d
     ./xcode-cli
     ./brew
     ./mtr
     ./osx-disable-dsstore-network-mounts
 fi
+
+# Make sure zgen submodule is cloned
+echo "init submodules"
+git submodule update --init --recursive
 
 # bin dir
 if [ ! -d ~/bin ]; then
