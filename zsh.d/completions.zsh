@@ -27,4 +27,4 @@ zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=29=34"
 zstyle ':completion:*:*:killall:*' menu yes select
 zstyle ':completion:*:killall:*' force-list always
 
-#eval "`pip completion --zsh`"
+eval "`pip3 completion --zsh`"

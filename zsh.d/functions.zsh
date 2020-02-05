@@ -44,3 +44,13 @@ function ne() {
 function view_ssl_cert() {
     echo | /usr/local/opt/openssl/bin/openssl s_client -showcerts -servername "$1" -connect "$1":443 2>/dev/null | openssl x509 -inform pem -noout -text
 }
+
+# To install Python2 packages globally
+gpip2() {
+PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+ 
+# To install Python3 packages globally
+gpip3() {
+PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
