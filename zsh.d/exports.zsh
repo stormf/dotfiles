@@ -7,6 +7,9 @@ export EDITOR=vim
 export LOCAL_BIN_PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/git-core/contrib/diff-highlight
 export LOCAL_BIN_PATH="/usr/local/opt/curl/bin:$LOCAL_BIN_PATH"
 export PATH=$LOCAL_BIN_PATH:$PATH
+
+source ~/google-cloud-sdk/path.zsh.inc
+
 export PERSONAL_GIT=~/personal
 export DOTFILES=~/personal/dotfiles
 
