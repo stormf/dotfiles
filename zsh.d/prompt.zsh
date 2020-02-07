@@ -9,12 +9,12 @@ parse_ve () {
     basename $PARENT 2> /dev/null | sed -e 's/* \(.*\)/ [\1]/g'
 }
 
-BLACK=$'\033[0m'
-RED=$'\033[38;5;167m'
-GREEN=$'\033[38;5;71m'
-BLUE=$'\033[38;5;111m'
-YELLOW=$'\033[38;5;228m'
-ORANGE=$'\033[38;5;173m'
+BLACK=%F{white}
+RED=%F{red}
+GREEN=%F{green}
+PURPLE=%F{blue}
+PINK=%F{magenta}
+YELLOW=%F{yellow}
 
 format_git_branch () {
     git_branch=$(parse_git_branch)
@@ -28,11 +28,11 @@ format_exit_status () {
 }
 
 format_ve () {
-    print "%{$ORANGE%}$(parse_ve)"
+    print "%{$YELLOW%}$(parse_ve)"
 }
 
 format_prefix () {
-    print "%{$RED%}%n@%m%{$BLACK%}:%{$GREEN%}%~"
+    print "%{$PINK%}%n%{$RED%}%{$BLACK%}:%{$GREEN%}%~"
 }
 
 function precmd() {

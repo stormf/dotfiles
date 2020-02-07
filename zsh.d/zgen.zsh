@@ -29,7 +29,6 @@ if ! zgen saved; then
     zgen load paoloantinori/hhighlighter
     zgen load chrissicool/zsh-256color
 
-    zgen oh-my-zsh plugins/brew
     zgen oh-my-zsh plugins/osx
 
     # k is a zsh script / plugin to make directory listings more readable,

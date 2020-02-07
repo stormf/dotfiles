@@ -54,3 +54,12 @@ PIP_REQUIRE_VIRTUALENV="" pip "$@"
 gpip3() {
 PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
+
+function ws_clone() {
+    cd ~/workspace
+    git clone $@
+}
+
+function tal_clone() {
+    ws_clone git@github.com:TAKEALOT/"$1".git
+}
