@@ -12,7 +12,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'altercation/vim-colors-solarized'
+"Plugin 'altercation/vim-colors-solarized'
 Plugin 'editorconfig-vim'
 
 " All of your Plugins must be added before the following line
@@ -44,11 +44,12 @@ set backspace=indent,eol,start
 
 syntax enable
 set background=dark
-let g:solarized_termtrans = 1
-let g:solarized_termcolors = 256
+colorscheme fairyfloss
+"let g:solarized_termtrans = 1
+"let g:solarized_termcolors = 256
 "let g:solarized_visibility = "high"
 "let g:solarized_contrast = "high"
-colorscheme solarized
+"colorscheme solarized
 
 set autochdir
 set backup

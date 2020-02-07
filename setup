@@ -29,6 +29,11 @@ if [ ! -d ~/.vim ]; then
     mkdir ~/.vim
 fi
 
+if [ ! -d ~/.vim/colors ]; then
+    mkdir ~/.vim/colors
+    ln -s "$DOTFILES/vim.d/fairyfloss.vim" ~/.vim/colors/fairyfloss.vim
+fi
+
 if [ ! -d ~/.vim/backup ]; then
     mkdir ~/.vim/backup
 fi
@@ -38,7 +43,7 @@ if [ ! -d ~/.vim/bundle ]; then
 fi
 
 if [ ! -e ~/.vim/bundle/Vundle.vim ]; then
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
 if [ ! -e ~/.vimrc ]; then
