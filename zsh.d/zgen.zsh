@@ -16,7 +16,6 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/knife
     zgen oh-my-zsh plugins/knife_ssh
     zgen oh-my-zsh plugins/docker
-    zgen oh-my-zsh plugins/kubectl
 
     zgen oh-my-zsh plugins/screen
     zgen oh-my-zsh plugins/vscode
@@ -33,6 +32,7 @@ if ! zgen saved; then
 
     # k is a zsh script / plugin to make directory listings more readable,
     # adding a bit of color and some git status information on files and directories
+    # unalias k # something is aliasing k to kubectl
     zgen load supercrabtree/k
 
     #save all to init script
