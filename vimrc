@@ -1,6 +1,6 @@
-
 "No vi mode
 set nocp
+filetype off
 
 " vundle
 " set the runtime path to include Vundle and initialize
@@ -12,8 +12,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'altercation/vim-colors-solarized'
 Plugin 'editorconfig-vim'
+Plugin 'ntpeters/vim-better-whitespace'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -23,6 +23,8 @@ filetype plugin on "Enable file specific plugins
 filetype indent on
 "vim latex-suite load properly
 let g:tex_flavor='latex'
+"strip trailing whitespace only on modified lines
+let g:strip_only_modified_lines=1
 
 
 set autoread

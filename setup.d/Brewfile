@@ -26,19 +26,14 @@ brew 'atool'
 brew 'gnupg'
 brew 'pinentry-mac'
 
-# php
-#tap 'homebrew/homebrew-php'
-#brew 'php55-intl'
-#brew 'homebrew/php/composer'
-
 # Casks
-tap 'caskroom/cask'
+tap 'homebrew/cask'
 cask 'iterm2'
 cask 'google-chrome'
 cask 'firefox'
 cask 'slack'
 cask 'visual-studio-code'
-cask 'toggl'
+cask 'docker'
 
 cask 'keepassxc'
 cask 'divvy'
@@ -46,4 +41,11 @@ cask 'divvy'
 cask 'pycharm-ce'
 cask 'vlc'
 cask 'signal'
+cask 'telegram'
+cask 'onedrive'
+cask 'spotify'
+
+# Fonts
+tap 'homebrew/cask-fonts'
+cask 'font-inconsolata-g'
 

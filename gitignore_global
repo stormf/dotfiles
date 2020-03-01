@@ -1,3 +1,9 @@
+### virtualenv
+virtualenv/**
+
+### VSCode
+.vscode
+
 ### Eclipse
 *.pydevproject
 .metadata

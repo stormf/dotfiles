@@ -35,7 +35,11 @@ format_prefix () {
     print "%{$PINK%}%n%{$RED%}%{$BLACK%}:%{$GREEN%}%~"
 }
 
+format_terraform() {
+    print "%{$PURPLE%}$(tf_prompt_info)"
+}
+
 function precmd() {
-        export PROMPT="$(format_prefix) $(format_git_branch) $(format_ve) %{$BLACK%}%T $(format_exit_status) %{$BLACK%}
+        export PROMPT="$(format_prefix) $(format_git_branch) $(format_ve) $(format_terraform) %{$reset_color%}%T $(format_exit_status) %{$reset_color%}
 %# "
 }

@@ -1,11 +1,9 @@
 #exports
-export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
-GPG_TTY=$(tty)
-export GPG_TTY
 
 export EDITOR=vim
 export LOCAL_BIN_PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/git-core/contrib/diff-highlight
 export LOCAL_BIN_PATH="/usr/local/opt/curl/bin:$LOCAL_BIN_PATH"
+export LOCAL_BIN_PATH="/usr/local/opt/openssl@1.1/bin:$LOCAL_BIN_PATH"
 export PATH=$LOCAL_BIN_PATH:$PATH
 
 source ~/google-cloud-sdk/path.zsh.inc

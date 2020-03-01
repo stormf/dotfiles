@@ -75,3 +75,8 @@ fi
 $DOTFILES/setup.d/configure-git
 echo "Remember to add your git email to global config"
 
+# editorconfig
+if [ ! -e ~/.editorconfig ]; then
+    ln -s "$DOTFILES/editorconfig" ~/.editorconfig
+    echo ".editorconfig installed successfully"
+fi
