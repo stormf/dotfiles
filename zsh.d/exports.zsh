@@ -28,3 +28,6 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
 # PIP should not install packages globally
 export PIP_REQUIRE_VIRTUALENV=true
+
+# homebrew disable beer emoji
+export HOMEBREW_NO_EMOJI=1
