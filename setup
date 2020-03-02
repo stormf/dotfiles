@@ -64,8 +64,6 @@ if [ ! -e ~/.zsh.d ]; then
     touch ~/.zsh.d/private.zsh
 fi
 
-echo "Remember to add /usr/local/bin/zsh to /etc/shells and run chsh -s /usr/local/bin/zsh"
-
 # git
 if [ ! -e ~/.gitignore_global ]; then
     ln -s "$DOTFILES/gitignore_global" ~/.gitignore_global

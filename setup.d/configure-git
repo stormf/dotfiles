@@ -2,7 +2,7 @@
 
 git config --global user.name "Storm Joubert"
 git config --global color.ui true
-git config --global push.default current
+git config --global push.default upstream
 git config --global credential.helper store
 
 git config --global core.excludesfile ~/.gitignore_global
@@ -13,4 +13,3 @@ git config --global pager.diff 'diff-highlight | less'
 
 git config --global url.git@github.com:.insteadOf gh:
 git config --global url.git@github.com:.insteadOf github:
-
