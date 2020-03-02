@@ -19,9 +19,9 @@ if [[ $OSX -eq 1 ]]; then
     export LANG=en_US.UTF-8
 
     # OSX stopped shipping openssl headers
-    export LDFLAGS="-L/usr/local/opt/openssl/lib"
-	export CFLAGS="-I/usr/local/opt/openssl/include"
-	export SWIG_FEATURES="-cpperraswarn -includeall -I/usr/local/opt/openssl/include"
+    export LDFLAGS="-L$(brew --prefix)/opt/openssl/lib"
+	export CFLAGS="-I$(brew --prefix)/opt/openssl/include"
+	export SWIG_FEATURES="-cpperraswarn -includeall -I$(brew --prefix)/opt/openssl/include"
 fi
 
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
