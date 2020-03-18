@@ -21,9 +21,6 @@ if ! zgen saved; then
     zgen load supercrabtree/k
 
     zgen oh-my-zsh plugins/ssh-agent
-    zgen oh-my-zsh plugins/aws
-    zgen oh-my-zsh plugins/knife
-    zgen oh-my-zsh plugins/knife_ssh
 
     zgen oh-my-zsh plugins/docker
     zgen oh-my-zsh plugins/gcloud
@@ -31,11 +28,12 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/terraform
 
     zgen oh-my-zsh plugins/screen
-    zgen oh-my-zsh plugins/vscode
-    zgen oh-my-zsh plugins/iterm2
     zgen oh-my-zsh plugins/emoji
 
     zgen oh-my-zsh plugins/extract
+
+    # fish like suggestions as you type
+    zgen load zsh-users/zsh-autosuggestions
 
     zgen load zdharma/fast-syntax-highlighting
     zgen load paoloantinori/hhighlighter

@@ -48,6 +48,7 @@ cask 'spotify'
 # Fonts
 tap 'homebrew/cask-fonts'
 cask 'font-inconsolata-g'
+cask 'font-hack'
 
 tap 'colindean/fonts-nonfree'
 cask 'font-microsoft-office'
