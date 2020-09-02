@@ -96,4 +96,4 @@ function dgcloud(){
 		${DOCKER_REPO_PREFIX}/gcloud "$@"
 }
 
-compdef dgcloud=gcloud
+# compdef dgcloud=gcloud

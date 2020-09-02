@@ -9,7 +9,7 @@ if ! zgen saved; then
     # update zgen once a week
     zgen load unixorn/autoupdate-zgen
 
-    zgen load nnao45/zsh-kubectl-completion
+    # zgen load nnao45/zsh-kubectl-completion
 
     zgen oh-my-zsh
 
@@ -22,10 +22,10 @@ if ! zgen saved; then
 
     zgen oh-my-zsh plugins/ssh-agent
 
-    zgen oh-my-zsh plugins/docker
-    zgen oh-my-zsh plugins/gcloud
-    zgen oh-my-zsh plugins/helm
-    zgen oh-my-zsh plugins/terraform
+    # zgen oh-my-zsh plugins/docker
+    # zgen oh-my-zsh plugins/gcloud
+    # zgen oh-my-zsh plugins/helm
+    # zgen oh-my-zsh plugins/terraform
 
     zgen oh-my-zsh plugins/screen
     zgen oh-my-zsh plugins/emoji

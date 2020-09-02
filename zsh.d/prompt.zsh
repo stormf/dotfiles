@@ -40,6 +40,6 @@ format_terraform() {
 }
 
 function precmd() {
-        export PROMPT="$(format_prefix) $(format_git_branch) $(format_ve) $(format_terraform) %{$reset_color%}%T $(format_exit_status) %{$reset_color%}
+    export PROMPT="$(format_prefix) $(format_git_branch) $(format_ve) %{$reset_color%} $(format_exit_status) %{$reset_color%}
 %# "
 }

@@ -1,5 +1,6 @@
 ### virtualenv
 virtualenv/**
+ve/**
 
 ### VSCode
 .vscode

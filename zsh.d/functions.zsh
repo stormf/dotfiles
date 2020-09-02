@@ -49,7 +49,7 @@ function view_ssl_cert() {
 gpip2() {
 PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
- 
+
 # To install Python3 packages globally
 gpip3() {
 PIP_REQUIRE_VIRTUALENV="" pip "$@"
@@ -63,3 +63,6 @@ function ws_clone() {
 function tal_clone() {
     ws_clone git@github.com:TAKEALOT/"$1".git
 }
+
+# pyenv-virtualenv
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi

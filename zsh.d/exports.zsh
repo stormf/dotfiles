@@ -6,6 +6,7 @@ export LOCAL_BIN_PATH="/usr/local/opt/curl/bin:$LOCAL_BIN_PATH"
 export LOCAL_BIN_PATH="/usr/local/opt/openssl@1.1/bin:$LOCAL_BIN_PATH"
 export PATH=$LOCAL_BIN_PATH:$PATH
 
+# add gcloud binaries to path
 source ~/google-cloud-sdk/path.zsh.inc
 
 export PERSONAL_GIT=~/personal
@@ -22,9 +23,11 @@ if [[ $OSX -eq 1 ]]; then
     export LDFLAGS="-L$(brew --prefix)/opt/openssl/lib"
 	export CFLAGS="-I$(brew --prefix)/opt/openssl/include"
 	export SWIG_FEATURES="-cpperraswarn -includeall -I$(brew --prefix)/opt/openssl/include"
+    export LIBRARY_PATH="${LIBRARY_PATH}:$(brew --prefix)/opt/openssl/lib/"
+    export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 fi
 
-export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+
 
 # PIP should not install packages globally
 export PIP_REQUIRE_VIRTUALENV=true
