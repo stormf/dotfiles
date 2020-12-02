@@ -79,3 +79,8 @@ Icon
 ### Maven
 target/
  *.releaseBackup
+
+### chef script doesnt like these
+ chef/cookbooks/chef-client/
+ chef/cookbooks/cron/
+ chef/cookbooks/logrotate/

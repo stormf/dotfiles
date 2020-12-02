@@ -29,15 +29,17 @@ if ! zgen saved; then
 
     zgen oh-my-zsh plugins/screen
     zgen oh-my-zsh plugins/emoji
+    zgen oh-my-zsh plugins/fzf
 
     zgen oh-my-zsh plugins/extract
 
     # fish like suggestions as you type
-    zgen load zsh-users/zsh-autosuggestions
+    # slow with kubernetes
+    #zgen load zsh-users/zsh-autosuggestions
 
-    zgen load zdharma/fast-syntax-highlighting
     zgen load paoloantinori/hhighlighter
     zgen load chrissicool/zsh-256color
+    zgen load zdharma/fast-syntax-highlighting
 
     zgen oh-my-zsh plugins/osx
 

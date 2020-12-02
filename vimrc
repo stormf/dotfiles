@@ -97,3 +97,6 @@ if has('mouse_sgr')
 endif
 
 let g:vimpager_less_mode = 0
+
+" enable fzf
+set rtp+=/usr/local/opt/fzf

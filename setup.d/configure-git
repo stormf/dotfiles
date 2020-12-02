@@ -13,3 +13,6 @@ git config --global pager.diff 'diff-highlight | less'
 
 git config --global url.git@github.com:.insteadOf gh:
 git config --global url.git@github.com:.insteadOf github:
+
+npm install -g rebase-editor
+git config --global sequence.editor rebase-editor

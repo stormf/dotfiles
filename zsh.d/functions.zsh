@@ -1,8 +1,8 @@
 
 function fuck() {
-  if killall -9 "$2"; then
-    echo ; echo " (╯°□°）╯︵$(echo "$2"|toilet -f term -F rotate)"; echo
-  fi
+    if killall -9 "$2"; then
+        echo ; echo " (╯°□°）╯︵$(echo "$2"|toilet -f term -F rotate)"; echo
+    fi
 }
 
 parse_git_branch () {
@@ -64,5 +64,8 @@ function tal_clone() {
     ws_clone git@github.com:TAKEALOT/"$1".git
 }
 
+function auditbeat-enable() {
+	knife-gcp exec -E 'nodes.find("name:'$1'") { |n| n.normal["sec_environment"]["security_elasticsearch_client"]["enable"]=true; n.save}'
+}
 # pyenv-virtualenv
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+#if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
