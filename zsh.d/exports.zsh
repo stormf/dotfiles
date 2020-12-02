@@ -7,7 +7,10 @@ export LOCAL_BIN_PATH="/usr/local/opt/openssl@1.1/bin:$LOCAL_BIN_PATH"
 export PATH=$LOCAL_BIN_PATH:$PATH
 
 # add gcloud binaries to path
-source ~/google-cloud-sdk/path.zsh.inc
+gcloud_sdk_path=~/google-cloud-sdk/path.zsh.inc
+if [ ! -e $gcloud_sdk_path ]; then
+    source $gcloud_sdk_path
+fi
 
 export PERSONAL_GIT=~/personal
 export DOTFILES=~/personal/dotfiles

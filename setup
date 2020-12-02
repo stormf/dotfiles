@@ -9,9 +9,6 @@ DOTFILES=`dirname $SCRIPT_PATH`
 
 if [ `uname` == 'Darwin' ]; then
     cd $DOTFILES/setup.d
-    ./xcode-cli
-    ./brew
-    ./mtr
     ./osx-disable-dsstore-network-mounts
 fi
 
