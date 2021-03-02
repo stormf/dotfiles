@@ -9,7 +9,7 @@ ve/**
 *.pydevproject
 .metadata
 .gradle
-bin/**
+#bin/**
 tmp/**
 tmp/**/*
 *.tmp

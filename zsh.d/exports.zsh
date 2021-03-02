@@ -4,12 +4,14 @@ export EDITOR=vim
 export LOCAL_BIN_PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/git-core/contrib/diff-highlight
 export LOCAL_BIN_PATH="/usr/local/opt/curl/bin:$LOCAL_BIN_PATH"
 export LOCAL_BIN_PATH="/usr/local/opt/openssl@1.1/bin:$LOCAL_BIN_PATH"
+export LOCAL_BIN_PATH="/usr/local/opt/python@3.8/bin:$LOCAL_BIN_PATH"
 export PATH=$LOCAL_BIN_PATH:$PATH
 
 # add gcloud binaries to path
-gcloud_sdk_path=~/google-cloud-sdk/path.zsh.inc
-if [ ! -e $gcloud_sdk_path ]; then
-    source $gcloud_sdk_path
+if [ -e "/usr/local/Caskroom/google-cloud-sdk" ]; then
+    export CLOUDSDK_PYTHON="/usr/local/opt/python@3.8/libexec/bin/python"
+    source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+    source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 fi
 
 export PERSONAL_GIT=~/personal
