@@ -9,6 +9,7 @@ source $SOURCE_DIR/completions.zsh
 source $SOURCE_DIR/aliases.zsh
 source $SOURCE_DIR/opts.zsh
 source $SOURCE_DIR/prompt.zsh
+source $SOURCE_DIR/autosuggest.zsh
 
 # load plugins and create a zgen save for fast startup
 source $SOURCE_DIR/zgen.zsh

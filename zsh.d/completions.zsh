@@ -1,10 +1,6 @@
 
-fpath=(/usr/local/share/zsh-completions $fpath)
-
 # Completion
 setopt completealiases
-#autoload -Uz compinit
-#compinit
 
 zmodload -i zsh/complist
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # color complet
@@ -26,5 +22,3 @@ zstyle ':completion:*:kill:*' force-list always
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=29=34"
 zstyle ':completion:*:*:killall:*' menu yes select
 zstyle ':completion:*:killall:*' force-list always
-
-eval "`pip3 completion --zsh`"

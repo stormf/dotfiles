@@ -3,6 +3,7 @@
 brew 'zsh'
 brew 'zsh-completions'
 brew 'vim'
+brew 'fzf'
 
 brew 'envchain'
 brew 'curl'
@@ -22,6 +23,7 @@ brew 'xz'
 brew 'jq'
 brew 'jid'
 brew 'atool'
+brew 'gnu-sed'
 
 brew 'gnupg'
 brew 'pinentry-mac'
