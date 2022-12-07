@@ -1,3 +1,6 @@
 [submodule "external/zgen"]
 	path = external/zgen
 	url = git@github.com:tarjoilija/zgen.git
+[submodule "external/zgenom"]
+	path = external/zgenom
+	url = https://github.com/jandamm/zgenom.git
