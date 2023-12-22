@@ -29,7 +29,7 @@ if ! zgenom saved; then
 
     zgenom load paoloantinori/hhighlighter
     zgenom load chrissicool/zsh-256color
-    zgenom load zdharma/fast-syntax-highlighting
+    zgenom load zdharma-continuum/fast-syntax-highlighting
 
     # zgen oh-my-zsh plugins/macos
 
@@ -37,6 +37,5 @@ if ! zgenom saved; then
     zgenom save
 
     zgenom compile "$HOME/.zshrc"
-    zgenom compile $ZDOTDIR
 
 fi

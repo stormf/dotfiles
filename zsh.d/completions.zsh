@@ -1,3 +1,7 @@
+# pipx completions
+autoload -U bashcompinit
+bashcompinit
+eval "$(register-python-argcomplete pipx)"
 
 # Completion
 setopt completealiases

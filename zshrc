@@ -22,3 +22,6 @@ source $SOURCE_DIR/dockerfunc.zsh
 # iterm 2 shell integration TODO: source this properly
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+
+# Created by `pipx` on 2022-12-21 07:12:04
+export PATH="$PATH:/Users/storm.joubert/.local/bin"
