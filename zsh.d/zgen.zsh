@@ -31,8 +31,6 @@ if ! zgenom saved; then
     zgenom load chrissicool/zsh-256color
     zgenom load zdharma-continuum/fast-syntax-highlighting
 
-    # zgen oh-my-zsh plugins/macos
-
     #save all to init script
     zgenom save
 
