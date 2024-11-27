@@ -54,3 +54,6 @@ cask 'font-hack'
 
 tap 'colindean/fonts-nonfree'
 cask 'font-microsoft-office'
+
+tap 'jesseduffield/lazygit'
+brew 'lazygit'

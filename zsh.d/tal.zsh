@@ -1,3 +1,6 @@
+
+alias ssh-preprod='ssh -t storm.joubert@bastion-preprod.stagealot.com -i /Users/stormjoubert/.ssh/id_preprod --'
+
 # tal git flow helpers
 
 function info() {
@@ -126,3 +129,8 @@ function code-abandon-local() {
     )
   )
 }
+
+
+alias ssh-preprod='ssh -t storm.joubert@bastion.m.pre.takealot.io -i $HOME/.ssh/the-bastion-pre --'
+alias ssh-prod='ssh -t storm.joubert@bastion.m.prn.takealot.io -i $HOME/.ssh/the-bastion-prod --'
+alias ssh-staging='ssh -t stormjoubert@bastion.m.stg.takealot.io -i $HOME/.ssh/the-bastion-stg --'
